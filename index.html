@@ -1,0 +1,139 @@
+<!-- REPO EJEMPLO: https://github.com/digitalhouse-content/validacion-formulario-curso-javascript -->
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Validación de formularios</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<form id="form-registro" action="" novalidate>
+			<h1>Formulario de Registro</h1>
+			<label for="nombre">Nombre</label>
+			<input
+				type="text"
+				name="nombre"
+				id="nombre"
+				minlength="3"
+				required
+				autocomplete="off"
+			/>
+			<div class="error" id="error-nombre"></div>
+			<br />
+
+			<label for="apellido">Apellido</label>
+			<input
+				type="text"
+				name="apellido"
+				id="apellido"
+				minlength="3"
+				required
+				autocomplete="off"
+			/>
+			<div class="error" id="error-apellido"></div>
+			<br />
+
+			<label for="documento">Documento</label>
+			<input
+				type="number"
+				name="documento"
+				id="documento"
+				required
+				autocomplete="off"
+				min="1000000"
+				max="99999999"
+			/>
+			<div class="error" id="error-documento"></div>
+			<br />
+
+			<label for="email">Email</label>
+			<input
+				type="email"
+				name="email"
+				id="email"
+				required
+				pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+				autocomplete="off"
+			/>
+			<div class="error" id="error-email"></div>
+			<br />
+
+			<label for="edad">Edad</label>
+			<input
+				type="number"
+				name="edad"
+				id="edad"
+				required
+				min="18"
+				max="120"
+				autocomplete="off"
+			/>
+			<div class="error" id="error-edad"></div>
+			<br />
+
+			<label for="actividad">Actividad</label>
+			<select name="actividad" id="actividad" required>
+				<option value="">Selecciona una opción</option>
+				<option value="Tecnología">Tecnología</option>
+				<option value="Programación">Programación</option>
+				<option value="Inteligencia Artificial">
+					Inteligencia Artificial
+				</option>
+				<option value="Automatización">Automatización</option>
+				<option value="Sistemas">Sistemas</option>
+				<option value="Educación">Educación</option>
+			</select>
+			<div class="error" id="error-actividad"></div>
+			<br />
+
+			<label for="nivel-estudio">Nivel de estudio</label>
+			<select name="nivel-estudio" id="nivel-estudio" required>
+				<option value="">Selecciona una opción</option>
+				<option value="Secundario">Secundario</option>
+				<option value="Terciario">Terciario</option>
+				<option value="Universitario">Universitario</option>
+				<option value="Universitario Incompleto">
+					Universitario Incompleto
+				</option>
+				<option value="Posgrado">Posgrado</option>
+			</select>
+			<div class="error" id="error-nivel-estudio"></div>
+			<br />
+
+			<input
+			type="checkbox"
+			name="terminos-condiciones"
+			id="terminos-condiciones"
+			required
+			/>
+			<label class="inline" for="terminos-condiciones"
+				>Acepto Términos y Condiciones</label
+			>
+			<div class="error" id="error-terminos-condiciones"></div>
+			<br />
+
+			Deseo recibir:
+			<input
+			type="checkbox"
+			name="publicidad"
+			id="ofertas"
+			value="ofertas"
+			/>
+			<label class="inline" for="ofertas">Ofertas</label>
+
+			<input
+			type="checkbox"
+			name="publicidad"
+			id="novedades"
+			value="novedades"
+			/>
+			<label class="inline" for="novedades">Novedades</label>
+			<br />
+
+			<input type="submit" value="Registrate" />
+		</form>
+	</body>
+</html>
